@@ -1,0 +1,2 @@
+module DetailpageHelper
+end

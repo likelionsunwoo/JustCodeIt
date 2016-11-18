@@ -1,0 +1,170 @@
+require 'nokogiri'
+require 'open-uri'
+
+class HomeController < ApplicationController
+  def index
+    
+  end
+  
+  def reply #댓글입력
+    
+  end
+  
+  def search #도서 검색 
+    
+  end
+  
+  def buy #도서구매
+    
+  end 
+  
+  def add # 장바구니에 더하기
+  
+  end
+  
+  # def crawl  #여기서 개조해서 이걸 실제로 쓸꺼임
+  #     1.upto(3131) do |c|
+  #     doc = Nokogiri::HTML(open("http://nstore.naver.com/ebook/categoryProductList.nhn?categoryTypeCode=all&page=#{c}")) 
+  #     # class = lst_list인것 중에 class가 cont인거에서 a태그안에 href안에 있는 페이지를 열고 거기서 cover author name etc..다긁는다.
+      
+      
+      
+  #       b = Book.new
+  #       b.cover = x
+  #       b.save
+
+  #     end
+    
+    
+  #   redirect_to "/home/try" 
+  # end
+    
+    
+  
+  
+  
+    
+  
+  
+  # def crawl 이건 리디북스 안쓸꺼임 아마
+ 
+      
+  #   211005246.downto(211005240) do |c|
+  #     doc = Nokogiri::HTML(open("http://ridibooks.com/v2/Detail?id=#{c}")) 
+  #     doc.css("img.thumbnail").each do |x|
+      
+      
+  #       b = Book.new
+  #       b.cover = x
+  #       b.save
+
+  #     end
+  #   end
+    
+  #   redirect_to "/home/try" 
+  # end
+  
+  
+  
+  
+  
+  def crawl #섭서버 500에러 때문에 못씀 그치만 일단 그거 빼면 잘됨 
+ 
+      
+    2524930.downto(1) do |c|
+      
+      doc = Nokogiri::HTML(open("http://nstore.naver.com/ebook/detail.nhn?productNo=#{c}")) 
+        
+        
+        
+        b = Book.new
+        b.name   = doc.css(".end_head//h2").inner_text #책제목 class end_head에서 h2 내부 내용
+        b.cover  = doc.css(".pic_area//img")[0]["src"] #표지이미지
+        b.genre  = doc.css("li.info_lst//ul//li:nth-child(3)//a").inner_text #장르 
+        b.author = doc.css("li.info_lst//ul//li:nth-child(1)//a").inner_text #작가
+        # b.isbn   = doc.css("") #ISBN
+        b.save
+        
+        
+        
+        
+    end
+    
+    redirect_to "/home/try"
+  end
+
+
+
+# def crawl #섭서버 500에러 때문에 못씀 그치만 일단 그거 빼면 잘됨 
+ 
+      
+#     2524930.downto(1) do |c|
+      
+#       doc = Nokogiri::HTML(open("http://nstore.naver.com/ebook/detail.nhn?productNo=#{c}")) 
+#       res = Net::HTTP.get_response(URI.parse("http://nstore.naver.com/ebook/detail.nhn?productNo=#{c}"))
+        
+#         if res.code.to_i >= 200 && res.code.to_i < 400 #good codes will be betweem 200 - 399
+#           # do something with the url
+#           b = Book.new
+#           b.name   = doc.css(".end_head//h2").inner_text #책제목 class end_head에서 h2 내부 내용
+#           b.cover  = doc.css(".pic_area//img")[0]["src"] #표지이미지
+#           b.genre  = doc.css("li.info_lst//ul//li:nth-child(3)//a").inner_text #장르 
+#           b.author = doc.css("li.info_lst//ul//li:nth-child(1)//a").inner_text #작가
+#           # b.isbn   = doc.css("") #ISBN
+#           b.save
+#         else
+           
+#           next
+#         end
+        
+#     end
+    
+#     redirect_to "/home/try"
+# end
+    
+  
+  
+  
+  
+  # def self.crawl
+    
+  #     arr = []
+  #     doc = Nokogiri::HTML(open("http://ridibooks.com/v2/Detail?id=211005246"))
+  #     tn = doc.css("img.thumbnail")[0]["src"]
+      
+  #     return tn
+      
+  # end
+  
+  
+  
+ 
+ 
+  # def self.crawl  #네이버북스 한개 콘솔로찍기 낯개 크롤
+    
+  #     arr = []
+  #     doc = Nokogiri::HTML(open("http://nstore.naver.com/ebook/detail.nhn?productNo=2516701"))
+  #     tn = doc.css(".pic_area//img")[0]["src"]
+      
+      
+  #     return tn
+      
+  # end
+  
+  
+  def try
+    # hc = HomeController.new
+    # k = hc.crawl
+    @books = Book.all
+  end
+    
+
+  
+
+end
+
+
+
+
+
+
