@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161115060442) do
     t.string   "isbn"
     t.string   "content"
     t.string   "cover"
+    t.integer  "bookNum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
