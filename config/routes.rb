@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'mybook/bought'=>'mybook#bought'
   get 'mybook/wish' => 'mybook#wish'
   get 'mybook/detail(/:id)' => 'mybook#detail'
+  get "mybook/content"=>"mybook#content"
   root 'home#index'
 
 
