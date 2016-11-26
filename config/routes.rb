@@ -3,13 +3,17 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get '/users/sign_out' => 'devise/sessions#destroy'
-  get '/home/index'
+  get '/home/index' => 'home#index'
   get '/home/try'=>'home#try'
   get '/home/crawl' =>'home#crawl'
   get '/mybook/bought'=>'mybook#bought'
   get '/mybook/wish' => 'mybook#wish'
   get '/mybook/detail(/:id)' => 'mybook#detail'
   get "/mybook/content"=>"mybook#content"
+  get "/home/artreligion"=>"home#artreligion"
+  get "/home/improve"=>"home#improve"
+  get "/home/itcomputer"=>"home#itcomputer"
+  get "/home/liberalhistory"=>"home#liberalhistory"
   root 'home#index'
 
 

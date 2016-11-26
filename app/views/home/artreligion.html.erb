@@ -1,4 +1,107 @@
-<!-- Products section -->
+       
+  <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+
+
+  <!-- Start header section -->
+  <header id="aa-header">
+    <!-- start header top  -->
+    <div class="aa-header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="aa-header-top-area">
+              <!-- start header top left -->
+              <div class="aa-header-top-left">
+                <!-- xxstart language -->
+                <div class="aa-language" "col-md-4 col-md-offset-4">
+                </div>
+                <!--xx / language -->
+                <!--xx start currency -->
+                <div class="aa-currency">
+                </div>
+                <!-- / currency -->
+                <!-- start cellphone -->
+                <div class="cellphone">
+                  <p><span class></span>JUSTBOOKS</p>
+                </div>
+                <!-- / cellphone -->
+                   <!-- search box -->
+              <div class="aa-search-box" "col-md-4 col-md-offset-4">
+                <form action="">
+                  <input type="text" name="" id="" placeholder="제목 저자 출판사 검색 ">
+                  <button type="submit"><span class="fa fa-search"></span></button>
+                </form>
+              </div>
+              <!-- / search box --> 
+              </div>
+              <!-- / header top left -->
+              <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <% if user_signed_in? %>
+                  <li><a href= "/users/sign_out">로그아웃</a></li>
+                  <li><a href="mybook/bought">마이북스</a></li> 
+                  <% else %>
+                   <li><a href="/users/sign_up" >회원가입</a></li>
+                   <li><a href="/users/sign_in">로그인</a></li>
+                   <!--<li><a href="/users/sign_in">로그인</a></li><%#= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>-->
+                   <li><a href="/users/auth/facebook">Login with Facebook</a></li>
+                  <% end %>
+                  
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / header top  -->
+
+  </header>
+  <!-- / header section -->
+  <!-- menu -->
+  <section id="menu">
+    <div class="container">
+      <div class="menu-area">
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>          
+          </div>
+          <div class="navbar-collapse collapse">
+            <!-- Left nav -->
+            <ul class="nav navbar-nav">
+                <li><a href="#">전체분야<span class="caret"></span></a>
+                <ul class="dropdown-menu">                
+                  <li><a href="/home/index">소설</a></li>
+                  <li><a href="/home/improve">자기계발</a></li>
+                  <li><a href="/home/liberalhistory">인문/역사</a></li>
+                  <li><a href="/home/artreligion">예술/종교</a></li>                                                
+                  <li><a href="/home/itcomputer">컴퓨터 IT</a></li>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">월간 베스트 셀러</a></li>
+              <li><a href="#">스테디셀러</a></li>
+              <li><a href="#">분야별 TOP 100</a></li>
+              </li>
+     
+          </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>       
+    </div>
+  </section>
+  <!-- / menu -->
+  
+  <!-- Products section -->
   <section id="aa-product">
     <div class="container">
       <div class="row">
@@ -21,7 +124,7 @@
                     <!-- Start men product category -->
                     <div class="tab-pane fade in active" id="men">
                       <ul class="aa-product-catg">
-                        <% Book.all.where(genre: "소설").each do |book| %>
+                        <% Book.all.where(genre: "예술/종교").each do |book| %>
                         <!-- start single product item -->
                         <li>
                           <figure>
@@ -762,3 +865,720 @@
     </div>
   </section>
   <!-- / Products section -->
+  <!-- banner section -->
+  <section id="aa-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">        
+          <div class="row">
+            <div class="aa-banner-area">
+            <a href="#"><img src="img/fashion-banner.jpg" alt="fashion banner img"></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- popular section -->
+  <section id="aa-popular-category">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="aa-popular-category-area">
+              <!-- start prduct navigation -->
+             <ul class="nav nav-tabs aa-products-tab">
+                <li class="active"><a href="#popular" data-toggle="tab">월간베스트 셀러</a></li>
+                <li><a href="#featured" data-toggle="tab">스테디셀러</a></li>
+              
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <!-- Start men popular category -->
+                <div class="tab-pane fade in active" id="popular">
+                  <ul class="aa-product-catg aa-popular-slider">
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-1.jpg" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">창문을 넘어 도망친 100세 노인</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>
+                     <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-2.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 2</a></h4>
+                          <span class="aa-product-price">9800원</span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                      </figure>
+                      <figcaption>
+                        <h4 class="aa-product-title"><a href="#">도서명 3</a></h4>
+                        <span class="aa-product-price">9800원</span>
+                      </figcaption>
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-3.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 3</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 4</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 5</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li>    
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 6</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li> 
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">도서명 7</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>                                                                                   
+                  </ul>
+                  <a class="aa-browse-btn" href="#">전체보기 <span class="fa fa-long-arrow-right"></span></a>
+                </div>
+                <!-- / popular product category -->
+                
+                <!-- start featured product category -->
+                <div class="tab-pane fade" id="featured">
+                 <ul class="aa-product-catg aa-featured-slider">
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>
+                     <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-2.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                      </figure>
+                      <figcaption>
+                        <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
+                        <span class="aa-product-price">9800원</span>
+                      </figcaption>
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-3.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li>    
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li> 
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>                                                                                   
+                  </ul>
+                  <a class="aa-browse-btn" href="#">전체보기 <span class="fa fa-long-arrow-right"></span></a>
+                </div>
+                <!-- / featured product category -->
+
+                <!-- start latest product category -->
+                <div class="tab-pane fade" id="latest">
+                  <ul class="aa-product-catg aa-latest-slider">
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>
+                     <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-2.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                      </figure>
+                      <figcaption>
+                        <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
+                        <span class="aa-product-price">9800원</span>
+                      </figcaption>
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                       <span class="aa-badge aa-sold-out" href="#">재고없음!</span>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-3.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                      
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                    </li>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li>    
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-4.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-hot" href="#">인기!</span>
+                    </li> 
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>
+                         <figcaption>
+                          <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
+                          <span class="aa-product-price">9800원</span><span class="aa-product-price"><del>13800원</del></span>
+                        </figcaption>
+                      </figure>                     
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
+                      <!-- product badge -->
+                      <span class="aa-badge aa-sale" href="#">할인!</span>
+                    </li>                                                                                   
+                  </ul>
+                   <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                </div>
+                <!-- / latest product category -->              
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / popular section -->
+  <!-- Support section -->
+  <section id="aa-support">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-support-area">
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-eye"></span>
+                <h4>완벽한 가독성</h4>
+                <P>저스트 북스 페이퍼의 고해상도 화면을 통해 실제 종이책과 동일한 수준의 선명한 글씨를 읽을 수 있습니다.</P>
+              </div>
+            </div>
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-lightbulb-o"></span>
+                <h4>어두운 밤에는 은은하게</h4>
+                <P>독서등이 종이책을 비추듯 정면에서 화면을 밝혀줍니다. 어두운 밤에도 오랫동안 최고의 가독성을 경험할 수 있습니다.</P>
+              </div>
+            </div>
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-file-text-o"></span>
+                <h4>페이지 넘김 버튼</h4>
+                <P>페이지 화면 양쪽에 위치한 버튼을 이용하여 더욱 쉽게 페이지를 넘길 수 있습니다.</P>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Support section -->
+  <!-- Testimonial -->
+  <section id="aa-testimonial">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-testimonial-area">
+            <ul class="aa-testimonial-slider">
+              <!-- single slide -->
+              <li>
+                <div class="aa-testimonial-single">
+                <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
+                  <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                  <p>우정은 비겁의 한 형태일 뿐이며, 사랑이라는 더 큰 책임과 도전을 회피하는 것이라는<br> 프루스트의 (대단히 비아리스토텔렐레스적인) 결론에 찬성하고 싶었다.</p>
+                  <div class="aa-testimonial-info">
+                    <p>[ 우리는 사랑일까 ] </p>
+                    <span>알랭드보통</span></span>
+                    <a href="#">김다혜님의 명언집 바로가기</a>
+                  </div>
+                </div>
+              </li>
+              <!-- single slide -->
+              <li>
+                <div class="aa-testimonial-single">
+                <img class="aa-testimonial-img" src="img/testimonial-img-1.jpg" alt="testimonial img">
+                  <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                  <p>통조림은 저널리즘적(액체를 담은, 한번 쓰고 버릴 용기)이었다가, <br> 워홀이 액자에 넣음으로써 문학의 반열(벽에 진열하고 반복해서 관람하는 것)로 격상된 셈이었다.</p>
+                  <div class="aa-testimonial-info">
+                    <p>[ 우리는 사랑일까 ]</p>
+                    <span>알랭드보통</span>
+                    <a href="#">정재윤님의 명언집 바로가기</a>
+                  </div>
+                </div>
+              </li>
+               <!-- single slide -->
+              <li>
+                <div class="aa-testimonial-single">
+                <img class="aa-testimonial-img" src="img/testimonial-img-3.jpg" alt="testimonial img">
+                  <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                  <p>타인을 상대할 때, 대개 우리는 무의식적으로 상대의 반응을 예상하고 행동한다.<br>내가 x라고 말하거나 행동하면, 이사람은 y라는 반응을 보이겠지.</p>
+                  <div class="aa-testimonial-info">
+                    <p>[ 우리는 사랑일까 ]</p>
+                    <span>알랭드보통</span>
+                    <a href="#">김우동님의 명언집 바로가기</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Testimonial -->
+
+  <!-- Subscribe section -->
+  <section id="aa-subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-subscribe-area">
+            <h3> 새로나온 책 소식을 받아보세요! :D </h3>
+            <p>새로나온 책 및 최신 도서 뉴스등 다양한 저스트북스 소식들을 전해 드립니다</p>
+            <form action="" class="aa-subscribe-form">
+              <input type="email" name="" id="" placeholder="이메일을 입력하세요">
+              <input type="submit" value="구독하기">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Subscribe section -->
+
+  <!-- footer -->  
+  <footer id="aa-footer">
+    <!-- footer bottom -->
+    <div class="aa-footer-top">
+     <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+          <div class="aa-footer-top-area">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <h3>메인메뉴</h3>
+                  <ul class="aa-footer-nav">
+                    <li><a href="#">월간베스트 셀러</a></li>
+                    <li><a href="#">스테디 셀러</a></li>
+                    <li><a href="#">분야별 TOP 100</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <h3>분야별 TOP 100</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">소설/시/에세이</a></li>
+                      <li><a href="#">자기계발</a></li>
+                      <li><a href="#">인문/역사</a></li>
+                      <li><a href="#">예술/종교</a></li>
+                      <li><a href="#">컴퓨터IT</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <a href="mybook/bought"><h3>마이북스</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">최근 본책</a></li>
+                      <li><a href="#">찜한책</a></li>
+                      <li><a href="#">형광펜</a></li>
+                      <li><a href="#">나만의 명언</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                            <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <h3>회원정보</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">회원가입</a></li>
+                      <li><a href="#">회원정보 변경</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <!-- footer-bottom -->
+    <div class="aa-footer-bottom">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+          <div class="aa-footer-bottom-area">
+            <p>Designed by <a href="#">JUSTBOOKS</a></p>
+            <div class="aa-footer-payment">
+              <span class="fa fa-cc-mastercard"></span>
+              <span class="fa fa-cc-visa"></span>
+              <span class="fa fa-paypal"></span>
+              <span class="fa fa-cc-discover"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+  <!-- / footer -->
+
+  <!-- Login Modal -->  
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">                      
+        <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4>Login or Register</h4>
+          <form class="aa-login-form" action="">
+            <label for="">Username or Email address<span>*</span></label>
+            <input type="text" placeholder="Username or email">
+            <label for="">Password<span>*</span></label>
+            <input type="password" placeholder="Password">
+            <button class="aa-browse-btn" type="submit">Login</button>
+            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
+            <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+            <div class="aa-register-now">
+              Don't have an account?<a href="account.html">Register now!</a>
+            </div>
+          </form>
+        </div>                        
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>    
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>  
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+  <!-- SmartMenus jQuery Bootstrap Addon -->
+  <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  
+  <!-- Product view slider -->
+  <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+  <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="js/slick.js"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="js/nouislider.js"></script>
+  <!-- Custom js -->
+  <script src="js/custom.js"></script> 
+
