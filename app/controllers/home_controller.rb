@@ -171,7 +171,7 @@ class HomeController < ApplicationController
     @books = Book.all
     
     
-  
+  end
 
 end
 
