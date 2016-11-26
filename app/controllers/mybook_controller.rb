@@ -13,7 +13,7 @@ class MybookController < ApplicationController
             
             Mybook.create(user_id: current_user.id, book_id: params[:book_id], is_opened: false, is_listed: true)
         else
-            mb = Mybook.where(user_id: current_user.id, book_id: params[:book_id], is_opened: true).take
+            mb = Mybook.where(user_id: current_user.id, book_id: params[:book_id]).take
             mb.is_listed = true
             mb.save
             
