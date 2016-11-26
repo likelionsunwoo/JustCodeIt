@@ -124,7 +124,7 @@
                     <!-- Start men product category -->
                     <div class="tab-pane fade in active" id="men">
                       <ul class="aa-product-catg">
-                        <% Book.all.where(genre: "IT").each do |book| %>
+                        <% Book.all.where(genre: ["인문", "역사"]).each do |book| %>
                         <!-- start single product item -->
                         <li>
                           <figure>
