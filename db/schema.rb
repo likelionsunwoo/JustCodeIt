@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20161126075210) do
     t.string   "content"
     t.string   "cover"
     t.integer  "bookNum"
-    t.integer  "read_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "read_count", default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "mybooks", force: :cascade do |t|

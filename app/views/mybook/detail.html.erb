@@ -140,8 +140,9 @@ function popView() {
                     <p><br>일단비움<br><br><br></p>
                     <% if user_signed_in? %>
                     <div class="aa-prod-view-bottom">
-                      <a class = "aa-add-to-cart-btn" href="/prince.pdf" onClick="popView()" target="_blank">읽기</a>
-                      <!--<a class="aa-add-to-cart-btn" href="/mybook/content">읽기</a>-->
+                      <!--<a class = "aa-add-to-cart-btn" href="/prince.pdf" onClick="popView()" target="_blank">읽기</a>-->
+                      
+                      <a class="aa-add-to-cart-btn" href="/mybook/increase_count/<%= @book.id %>" method="get">읽기</a>
                       <a class="aa-add-to-cart-btn" href="#">찜하기</a>
                     <% end %>
 
