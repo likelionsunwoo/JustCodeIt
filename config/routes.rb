@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   get '/mybook/wish' => 'mybook#wish'
   get '/mybook/detail(/:id)' => 'mybook#detail'
   get "/mybook/content"=>"mybook#content"
+  
+  post 'mybook/pick'
+  #== get '/mybook/pick"=>"mybook#pick'
+  post 'mybook/read'
+  #== get '/mybook/read"=>"mybook#read'
+  
   root 'home#index'
 
 
