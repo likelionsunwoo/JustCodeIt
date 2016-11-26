@@ -1,5 +1,9 @@
 Book.create!([
+<<<<<<< HEAD
   {name: "북타임스 고려왕비열전 49. 충목왕, 정순 숙의 공주(총목왕의 모후) ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_243/pocket_14792547172005UHkH_JPEG/kyobo8380279385308054617l480D161114100.jpg?type=m260", bookNum: 2527000, read_count: 0},
+=======
+  {name: "북타임스 고려왕비열전 49. 충목왕, 정순 숙의 공주(총목왕의 모후) ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_243/pocket_14792547172005UHkH_JPEG/kyobo8380279385308054617l480D161114100.jpg?type=m260", bookNum: 2527000, read_count: 50},
+>>>>>>> 66c298a829de548ac9b3bd0bdfd0525597bed204
   {name: "북타임스 고려왕비열전 50. 충목왕, 충정왕, 정순 숙의 공주 ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_130/pocket_1479254708782E2ePx_JPEG/kyobo5154381791811650917l480D161114110.jpg?type=m260", bookNum: 2526999, read_count: 0},
   {name: "북타임스 고려왕비열전 51. 공민왕과 노국 대장 공주 인덕 왕후① ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_134/pocket_14792547000527VhF4_JPEG/kyobo2111585052119566087l480D161114120.jpg?type=m260", bookNum: 2526998, read_count: 0},
   {name: "북타임스 고려왕비열전 52. 공민왕과 노국 대장 공주 인덕 왕후② ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_256/pocket_1479254691305GU14X_JPEG/kyobo7542472132059636875l480D161114130.jpg?type=m260", bookNum: 2526997, read_count: 0},

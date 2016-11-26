@@ -167,8 +167,11 @@ class HomeController < ApplicationController
     @books = Book.all
   end
     
-
-  
+  def read
+    @books = Book.all
+    
+    
+  end
 
 end
 
