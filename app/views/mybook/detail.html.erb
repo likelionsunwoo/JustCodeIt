@@ -134,6 +134,8 @@ function popView() {
                     <div class="aa-price-block">
                       <!--<span class="aa-product-view-price"> <b>9,800원</b> <font color="red">(10% 할인)</font></span>-->
                       <p class="aa-product-avilability"><%= @book.author %></p>
+                      <p class="aa-product-avilability"><%= @book.genre %></p>
+                      
                     </div>
                     <p><br>일단비움<br><br><br></p>
                     <% if user_signed_in? %>
