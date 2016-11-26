@@ -46,9 +46,15 @@ function popView() {
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
 
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">회원가입</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">로그인</a></li>
-                  <li><a href="product.html">마이북스</a></li>
+                  <% if user_signed_in? %>
+                  <li><a href= "/users/sign_out">로그아웃</a></li>
+                  <li><a href="mybook/bought">마이북스</a></li> 
+                  <% else %>
+                   <li><a href="/users/sign_up" >회원가입</a></li>
+                   <li><a href="/users/sign_in">로그인</a></li>
+                   <!--<li><a href="/users/sign_in">로그인</a></li><%#= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>-->
+                   <li><a href="/users/auth/facebook">Login with Facebook</a></li>
+                  <% end %>
                 </ul>
               </div>
             </div>
@@ -130,11 +136,12 @@ function popView() {
                       <p class="aa-product-avilability"><%= @book.author %></p>
                     </div>
                     <p><br>일단비움<br><br><br></p>
-                   
+                    <% if user_signed_in? %>
                     <div class="aa-prod-view-bottom">
                       <a class = "aa-add-to-cart-btn" href="/prince.pdf" onClick="popView()" target="_blank">읽기</a>
                       <!--<a class="aa-add-to-cart-btn" href="/mybook/content">읽기</a>-->
                       <a class="aa-add-to-cart-btn" href="#">찜하기</a>
+                    <% end %>
 
                     </div>
                   </div>
