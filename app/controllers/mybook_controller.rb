@@ -54,8 +54,10 @@ class MybookController < ApplicationController
         @mybooks = Mybook.where(user_id: current_user.id, is_listed: true)
         #@mybooks = Mybook.joins("INNER JOIN books b ON b.id = mybooks.book_id and mybooks.is_listed ='t'").where(user_id: current_user.id)
         
-        
-        
+    end
+    
+    def bought
+       @mybooks = Mybook.where(user_id: current_user.id, is_opened: true) 
     end
     
 end
