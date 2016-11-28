@@ -1,7 +1,10 @@
 <script type="text/javascript">
 
+// function popView() {
+//     window.open('/prince.pdf','CLIENT_WINDOW','resizable=yes scrollbars=yes width=800 height=700');
+// }
 function popView() {
-    window.open('/prince.pdf','CLIENT_WINDOW','resizable=yes scrollbars=yes width=800 height=700');
+    window.open('<%=@book.content%>','CLIENT_WINDOW','resizable=yes scrollbars=yes width=800 height=700');
 }
 
 function getMine(){	

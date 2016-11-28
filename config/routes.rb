@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "/home/itcomputer"=>"home#itcomputer"
   get "/home/liberalhistory"=>"home#liberalhistory"
   get "/mybook/increase_count(/:id)" => "mybook#increase_count"
-
+  get "/home/allgenre"=>"home#allgenre"
   root 'home#index'
 
 

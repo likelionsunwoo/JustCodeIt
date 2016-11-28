@@ -3,9 +3,29 @@ require 'open-uri'
 
 class HomeController < ApplicationController
   def index
-    
+    @books = Book.where(genre: "소설").all
   end
   
+  def liberalhistory
+    @books = Book.where(genre: ["인문", "역사"]).all
+  end
+  
+  def improve
+    @books = Book.where(genre: "자기계발").all
+  end
+  
+  def artreligion
+    @books = Book.where(genre: "예술/종교").all
+  end
+  
+  def itcomputer
+    @books = Book.where(genre: "IT").all
+  end
+  
+  def allgenre
+    @books = Book.all
+  end
+ 
   def reply #댓글입력
     
   end
