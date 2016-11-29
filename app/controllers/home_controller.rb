@@ -25,6 +25,48 @@ class HomeController < ApplicationController
   def allgenre
     @books = Book.all
   end
+  
+  def search
+        query = params[:query]
+        if query.nil?
+            flash[:error] = "검색어를 입력하세요."
+        else
+            if query.length == 0
+                flash[:error] = "검색어를 입력하세요."
+                return
+            end
+
+            splited = query.split
+            @searched_by_author = Array.new
+            @searched_by_name = Array.new
+
+            Book.all.each do |s|
+                splited.each do |q|
+                    @searched_by_author << s if s.author.include?(q)
+                    @searched_by_name << s if s.name.include?(q)
+                  
+                end
+            end
+            
+            @searched_by_author = @searched_by_author.uniq
+            @searched_by_name = @searched_by_name.uniq
+           
+        end
+        
+  end
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  
   def reply #댓글입력
     
@@ -58,6 +100,15 @@ class HomeController < ApplicationController
     
   #   redirect_to "/home/try" 
   # end
+  
+  def qualify
+    status = false
+    token = params[:token] 
+    unless token.nil?
+      status = true
+    end
+    return render json: {status: status}
+  end
     
     
   

@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   
   post 'mybook/pick'
   #== get '/mybook/pick"=>"mybook#pick'
-  post 'mybook/read'
+  post '/mybook/read'
+  # post '/mybook/read(/:id)' => "mybook#read"
   #== get '/mybook/read"=>"mybook#read'
   
 
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
   get "/home/liberalhistory"=>"home#liberalhistory"
   get "/mybook/increase_count(/:id)" => "mybook#increase_count"
   get "/home/allgenre"=>"home#allgenre"
+  
+  post "/mybook/detail(/:id)" => "mybook#detail"
   root 'home#index'
 
 

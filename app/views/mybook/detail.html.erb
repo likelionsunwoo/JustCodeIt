@@ -3,8 +3,21 @@
 // function popView() {
 //     window.open('/prince.pdf','CLIENT_WINDOW','resizable=yes scrollbars=yes width=800 height=700');
 // }
+
+// ajax
+
+
 function popView() {
-    window.open('<%=@book.content%>','CLIENT_WINDOW','resizable=yes scrollbars=yes width=800 height=700');
+    <%#= Rails.root.join('app', 'assets', "#{@book.content}") %><%#=@book.content%>
+    var frmObj = document.frmPopup;
+    var url = '<%= asset_path("#{@book.content}") %>';
+    window.open(url,'CLIENT_WINDOW','resizable=yes scrollbars=no width=800 height=700');
+    
+    frmPop.action = url;
+    frmPop.target = 'CLIENT_WINDOW';
+    frmPop.arg1.value = '<%=SecureRandom.hex(8)%>';
+    frmPop.submit();
+    
 }
 
 function getMine(){	
@@ -40,20 +53,20 @@ function getMine(){
   <%= render "home/loginModal" %>
 
   <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.js"></script>  
+  <!--<script src="js/bootstrap.js"></script>  -->
   <!-- SmartMenus jQuery plugin -->
-  <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+  <!--<script type="text/javascript" src="js/jquery.smartmenus.js"></script>-->
   <!-- SmartMenus jQuery Bootstrap Addon -->
-  <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  
+  <!--<script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  -->
   <!-- Product view slider -->
-  <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
-  <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+  <!--<script type="text/javascript" src="js/jquery.simpleGallery.js"></script>-->
+  <!--<script type="text/javascript" src="js/jquery.simpleLens.js"></script>-->
   <!-- slick slider -->
-  <script type="text/javascript" src="js/slick.js"></script>
+  <!--<script type="text/javascript" src="js/slick.js"></script>-->
   <!-- Price picker slider -->
-  <script type="text/javascript" src="js/nouislider.js"></script>
+  <!--<script type="text/javascript" src="js/nouislider.js"></script>-->
   
   <!-- Custom js -->
-  <script src="js/custom.js"></script> 
+  <!--<script src="js/custom.js"></script> -->

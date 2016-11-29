@@ -27,12 +27,9 @@ class MybookController < ApplicationController
     
         if Mybook.where(user_id: current_user.id, book_id: params[:book_id]).count == 0
             Mybook.create(user_id: params[:user_id], book_id: params[:book_id], is_opened: true, is_listed: false)
-            
             b = Book.find(params[:book_id])
             b.read_count += 1;
             b.save
-            
-            
         else
             mb = Mybook.where(user_id: current_user.id, book_id: params[:book_id]).take
             mb.is_opened = true
@@ -41,9 +38,11 @@ class MybookController < ApplicationController
             b = Book.find(params[:book_id])
             b.read_count += 1;
             b.save
-            
-            
-        end 
+        end
+        
+        unless params[:token].nil?
+            return render json: {status: true}
+        end
         
         redirect_to :back
         
