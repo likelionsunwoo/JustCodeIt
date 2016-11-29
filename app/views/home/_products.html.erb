@@ -14,7 +14,7 @@
                     <li><a href="/home/improve" data-toggle="tab">자기계발</a></li>
                     <li><a href="/home/liberalhistory" data-toggle="tab">인문/역사</a></li>
                     <li><a href="/home/artreligion" data-toggle="tab">예술/종교</a></li>
-                    <li><a href="/home/itcomputer" data-toggle="tab">컴퓨터 IT</a></li>
+                    <li><a href="/home/itcomputer" data-toggle="tab">컴퓨터 IT <%#= @books.class %></a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
@@ -24,18 +24,16 @@
                         
                         
                         <% @books.each do |book| %>
-                        
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="/mybook/detail/<%= book.id %>"><img src="<%= book.cover %>" alt="polo shirt img"></a>
-                            
-                              <figcaption>
-                              <h4 class="aa-product-title"><a href="#"><%= book.name %></a></h4>
-                            
-                            </figcaption>
-                          </figure>                        
-                            
-                        </li>
+                          <li>
+                            <figure>
+                              <a class="aa-product-img" href="/mybook/detail/<%= book.id %>"><img src="<%= book.cover %>" alt="polo shirt img"></a>
+                              
+                                <figcaption>
+                                <h4 class="aa-product-title"><a href="#"><%= book.name %></a></h4>
+                              
+                              </figcaption>
+                            </figure>
+                          </li>
                         <% end %>
                         
                         

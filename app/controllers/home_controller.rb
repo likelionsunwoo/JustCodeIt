@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class HomeController < ApplicationController
+  
   def index
     @books = Book.where(genre: "소설").all.order("read_count desc")
   end
@@ -26,63 +27,40 @@ class HomeController < ApplicationController
     @books = Book.all.order("read_count desc")
   end
   
-  def search
-        word = params[:word]
-        @books = []
-        # puts word.length
-        
-        if word.nil?
-            flash[:error] = "검색어를 입력하세요."
-        else
-          # puts "here!!!!!!\n\n\n"
-            if word.length == 0
-                flash[:error] = "검색어를 입력하세요."
-                return
-            end
-            
-            splited = word.split
-            @searched_by_author = Array.new
-            @searched_by_name = Array.new
-
-            Book.all.each do |s|
-                splited.each do |q|
-                    @searched_by_author << s if s.author.include?(q)
-                    @searched_by_name << s if s.name.include?(q)
-                end
-            end
-            
-            @searched_by_author = @searched_by_author.uniq
-            @searched_by_name   = @searched_by_name.uniq
-            
-            @books =  (@searched_by_author + @searched_by_name).uniq
-            
-            # @books = @books unless @books.nil?
-            # @books = [] if @books.nil?
-                       
-        end
-        
-        # render layout: '/home/search'
-  end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- 
   def reply #댓글입력
     
   end
   
   def search #도서 검색 
     
+    word = params[:query]
+    @books = []
+    
+    if word.nil?
+        flash[:error] = "검색어를 입력하세요."
+    else
+        if word.length == 0
+            flash[:error] = "검색어를 입력하세요."
+            return
+        end
+        splited = word.split
+        @searched_by_author = Array.new
+        @searched_by_name = Array.new
+        
+        Book.all.each do |s|
+            splited.each do |q|
+                @searched_by_author << s if s.author.include?(q)
+                @searched_by_name << s if s.name.include?(q)
+            end
+        end
+        
+        puts "\n\n\n\n\n\t\t\t i'm ALIVE  5!!!!!! \n\n\n\n\n\n\n"
+        @searched_by_author = @searched_by_author.uniq
+        @searched_by_name   = @searched_by_name.uniq
+        
+        @books =  (@searched_by_author + @searched_by_name).uniq
+                   
+    end
   end
   
   def buy #도서구매

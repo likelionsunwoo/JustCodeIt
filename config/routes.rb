@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   get "/home/liberalhistory"=>"home#liberalhistory"
   get "/mybook/increase_count(/:id)" => "mybook#increase_count"
   get "/home/allgenre"=>"home#allgenre"
-  get "/home/search"=>"home#search"
+  post "/home/search"
+  get "/home/search"
   
   post "/mybook/detail(/:id)" => "mybook#detail"
   root 'home#index'
