@@ -7,16 +7,33 @@
 // ajax
 
 
+// function Frameset(page) { 
+// framecode = "<frameset rows='1*'>" 
+// + "<frame name=main src='" + page + "'>" 
+// + "</frameset>"; 
+
+// document.write(framecode); 
+// document.close(); 
+// } 
+
+
+
+
+
+
+
 function popView() {
     <%#= Rails.root.join('app', 'assets', "#{@book.content}") %><%#=@book.content%>
     var frmObj = document.frmPopup;
     var url = '<%= asset_path("#{@book.content}") %>';
-    window.open(url,'CLIENT_WINDOW','resizable=yes scrollbars=no width=800 height=700');
     
-    frmPop.action = url;
-    frmPop.target = 'CLIENT_WINDOW';
-    frmPop.arg1.value = '<%=SecureRandom.hex(8)%>';
-    frmPop.submit();
+    window.open(url,'CLIENT_WINDOW',' directories=no, resizable=yes, scrollbars=no, width=800, height=700, titlebar=no, toolbar=no, location=no, status=no, menubar=no');
+    // app.launchURL("javascript:window.open('http://www.example.com/mydoc.doc')",true); 
+    
+    // frmPop.action = url;
+    // frmPop.target = 'CLIENT_WINDOW';
+    // frmPop.arg1.value = '<#%=SecureRandom.hex(8)%>';
+    // frmPop.submit();
     
 }
 

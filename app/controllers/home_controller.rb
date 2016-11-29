@@ -3,40 +3,44 @@ require 'open-uri'
 
 class HomeController < ApplicationController
   def index
-    @books = Book.where(genre: "소설").all
+    @books = Book.where(genre: "소설").all.order("read_count desc")
   end
   
   def liberalhistory
-    @books = Book.where(genre: ["인문", "역사"]).all
+    @books = Book.where(genre: ["인문", "역사"]).all.order("read_count desc")
   end
   
   def improve
-    @books = Book.where(genre: "자기계발").all
+    @books = Book.where(genre: "자기계발").all.order("read_count desc")
   end
   
   def artreligion
-    @books = Book.where(genre: "예술/종교").all
+    @books = Book.where(genre: "예술/종교").all.order("read_count desc")
   end
   
   def itcomputer
-    @books = Book.where(genre: "IT").all
+    @books = Book.where(genre: "IT").all.order("read_count desc")
   end
   
   def allgenre
-    @books = Book.all
+    @books = Book.all.order("read_count desc")
   end
   
   def search
-        query = params[:query]
-        if query.nil?
+        word = params[:word]
+        @books = []
+        # puts word.length
+        
+        if word.nil?
             flash[:error] = "검색어를 입력하세요."
         else
-            if query.length == 0
+          # puts "here!!!!!!\n\n\n"
+            if word.length == 0
                 flash[:error] = "검색어를 입력하세요."
                 return
             end
-
-            splited = query.split
+            
+            splited = word.split
             @searched_by_author = Array.new
             @searched_by_name = Array.new
 
@@ -44,15 +48,20 @@ class HomeController < ApplicationController
                 splited.each do |q|
                     @searched_by_author << s if s.author.include?(q)
                     @searched_by_name << s if s.name.include?(q)
-                  
                 end
             end
             
             @searched_by_author = @searched_by_author.uniq
-            @searched_by_name = @searched_by_name.uniq
-           
+            @searched_by_name   = @searched_by_name.uniq
+            
+            @books =  (@searched_by_author + @searched_by_name).uniq
+            
+            # @books = @books unless @books.nil?
+            # @books = [] if @books.nil?
+                       
         end
         
+        # render layout: '/home/search'
   end
   
   
