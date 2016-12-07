@@ -38,20 +38,6 @@ function popView() {
     
 }
 
-function getMine(){	
-	var obj = document.forms[0];	
-	if(obj.txt_stay_nm.value.trim().length == 0)
-	{
-		alert("숙박업소명을 입력 하십시오.");
-		obj.txt_stay_nm.focus();
-		return;
-	}
-
-	obj.action = "./CTZA01IU.asp";
-	obj.method = "post";
-	obj.submit();
-}
-
 
 </script>
 

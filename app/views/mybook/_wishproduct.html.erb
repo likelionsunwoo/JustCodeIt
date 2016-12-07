@@ -38,7 +38,7 @@
                 <% @mybooks.each do |mb| %>
                   <li>
                     <figure>
-                      <a class="aa-product-img" href="#"><img src=<%=mb.book.cover%>></a>
+                      <a class="aa-product-img" href="/mybook/detail/<%= mb.book.id %>"><img src=<%=mb.book.cover%> width="172px" height="260px"></a>
                       <!--<a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>장바구니</a>-->
                       <figcaption>
                         <h4 class="aa-product-title"><a href="#"><%= mb.book.name %><%#=Book.find(mb.book_id).name %></a></h4>
