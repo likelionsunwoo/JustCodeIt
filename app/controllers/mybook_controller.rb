@@ -9,7 +9,7 @@ class MybookController < ApplicationController
         #user_id = params[:user_id]
         #Mybook.create(user_id: params[:user_id], book_id: params[:book_id], is_opened: false, is_listed: true)
         
-        
+        db
         if Mybook.where(user_id: current_user.id, book_id: params[:book_id]).count == 0
             
             Mybook.create(user_id: current_user.id, book_id: params[:book_id], is_opened: false, is_listed: true)
