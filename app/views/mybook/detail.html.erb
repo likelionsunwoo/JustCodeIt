@@ -51,7 +51,142 @@ function popView() {
   <%= render "detailproduct" %>
   
   <!-- footer -->  
-  <%= render "home/footer" %>
+  <%#= render "home/footer" %>
+  <section id="aa-support">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-support-area">
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-eye"></span>
+                <h4>이 책을 담은 고객이 관심을 보인 책</h4>
+                <% @result.sample(3).each do |book| %>
+                  <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+                    <!--<div class="aa-support-single">-->
+                  <li>
+                    <figure>
+                      <a class="aa-product-img" href="/mybook/detail/<%= book.id %>"><img src="<%= book.cover %>" width="172px" height="260px"></a>
+                      
+                        <figcaption>
+                        <h4 class="aa-product-title"><a href="/mybook/detail/<%= book.id %>"  style="color:white"><%= book.name %></a></h4>
+                      
+                      </figcaption>
+                    </figure>
+                  </li>
+                    <!--</div>-->
+                  <!--</div>-->
+                <% end %>
+              </div>
+            </div>
+            <!-- single support -->
+            <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+            <!--  <div class="aa-support-single">-->
+            <!--    <span class="fa fa-lightbulb-o"></span>-->
+            <!--    <h4>어두운 밤에는 은은하게</h4>-->
+            <!--    <P>독서등이 종이책을 비추듯 정면에서 화면을 밝혀줍니다. 어두운 밤에도 오랫동안 최고의 가독성을 경험할 수 있습니다.</P>-->
+            <!--  </div>-->
+            <!--</div>-->
+            <!-- single support -->
+            <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+            <!--  <div class="aa-support-single">-->
+            <!--    <span class="fa fa-file-text-o"></span>-->
+            <!--    <h4>페이지 넘김 버튼</h4>-->
+            <!--    <P>페이지 화면 양쪽에 위치한 버튼을 이용하여 더욱 쉽게 페이지를 넘길 수 있습니다.</P>-->
+            <!--  </div>-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Support section -->
+ 
+<!-- footer -->  
+  <footer id="aa-footer">
+    <!-- footer bottom -->
+    <div class="aa-footer-top">
+     <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+          <div class="aa-footer-top-area">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <h3>메인메뉴</h3>
+                  <ul class="aa-footer-nav">
+                    <li><a href="#">월간베스트 셀러</a></li>
+                    <li><a href="#">스테디 셀러</a></li>
+                    <li><a href="#">분야별 TOP 100</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <h3>분야별 TOP 100</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">소설/시/에세이</a></li>
+                      <li><a href="#">자기계발</a></li>
+                      <li><a href="#">인문/역사</a></li>
+                      <li><a href="#">예술/종교</a></li>
+                      <li><a href="#">컴퓨터IT</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <a href="mybook/bought"><h3>마이북스</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">최근 본책</a></li>
+                      <li><a href="#">찜한책</a></li>
+                      <li><a href="#">형광펜</a></li>
+                      <li><a href="#">나만의 명언</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                            <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget">
+                    <h3>회원정보</h3>
+                    <ul class="aa-footer-nav">
+                      <li><a href="#">회원가입</a></li>
+                      <li><a href="#">회원정보 변경</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <!-- footer-bottom -->
+    <div class="aa-footer-bottom">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+          <div class="aa-footer-bottom-area">
+            <p>Designed by <a href="#">JUSTBOOKS</a></p>
+            <div class="aa-footer-payment">
+              <span class="fa fa-cc-mastercard"></span>
+              <span class="fa fa-cc-visa"></span>
+              <span class="fa fa-paypal"></span>
+              <span class="fa fa-cc-discover"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
   
   <!-- Login Modal -->  
   <%= render "home/loginModal" %>
