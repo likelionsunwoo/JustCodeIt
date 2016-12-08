@@ -1,6 +1,7 @@
 class MybookController < ApplicationController
     def detail
         @book = Book.find(params[:id])
+        @result = recommend(params[:id])
     end
     
     def pick # 찜 리스트 추가
@@ -59,4 +60,22 @@ class MybookController < ApplicationController
        @mybooks = Mybook.where(user_id: current_user.id, is_opened: true) 
     end
     
+    def recommend(id)
+      book = Book.find(id)
+      my_books = Book.find(id).mybooks
+      
+      users= my_books.all.map{|m|m.user}
+      my_books_total =[]
+      my_books_total = users.map{|user|user.mybooks}.flatten
+      my_books_total = my_books_total.map{|mybook|mybook.book}.uniq
+      my_books_total -= [book]
+      result =[]
+      my_books_total.each do |b|
+          if b.genre == book.genre
+              result << b
+          end
+      end
+      return result
+    end
+
 end

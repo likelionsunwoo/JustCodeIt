@@ -27,9 +27,9 @@ class HomeController < ApplicationController
     @books = Book.all.order("read_count desc")
   end
   
-  def reply #댓글입력
+  #def reply #댓글입력
     
-  end
+  #end
   
   def search #도서 검색 
     
@@ -63,13 +63,7 @@ class HomeController < ApplicationController
     end
   end
   
-  def buy #도서구매
-    
-  end 
-  
-  def add # 장바구니에 더하기
-  
-  end
+ 
   
   # def crawl  #여기서 개조해서 이걸 실제로 쓸꺼임
   #     1.upto(3131) do |c|

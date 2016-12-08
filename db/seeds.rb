@@ -1,7 +1,7 @@
-User.create!([
-  {email: "sunwoolyu@naver.com", encrypted_password: "$2a$11$8S7mlMOo50dWBrGUS.bCyuTT61L2jfnn9pZEfHMF6OYuu/MMLaPQC", name: nil, reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2016-11-29 10:29:20", last_sign_in_at: "2016-11-29 08:47:31", current_sign_in_ip: "61.33.149.101", last_sign_in_ip: "210.94.199.141", provider: nil, uid: nil},
-  {email: "yhk1038@hanmail.net", encrypted_password: "$2a$11$4CnfduBw1uq6720jgcMbB.pATnuOJE0pxEMr6AYSh/0T4t1vQi8uy", name: "김용현", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-11-29 10:51:39", last_sign_in_at: "2016-11-28 19:13:31", current_sign_in_ip: "61.33.149.101", last_sign_in_ip: "61.33.149.101", provider: "facebook", uid: "1104892262961168"}
-])
+# User.create!([
+#   {email: "sunwoolyu@naver.com", encrypted_password: "$2a$11$8S7mlMOo50dWBrGUS.bCyuTT61L2jfnn9pZEfHMF6OYuu/MMLaPQC", name: nil, reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2016-11-29 10:29:20", last_sign_in_at: "2016-11-29 08:47:31", current_sign_in_ip: "61.33.149.101", last_sign_in_ip: "210.94.199.141", provider: nil, uid: nil},
+#   {email: "yhk1038@hanmail.net", encrypted_password: "$2a$11$4CnfduBw1uq6720jgcMbB.pATnuOJE0pxEMr6AYSh/0T4t1vQi8uy", name: "김용현", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-11-29 10:51:39", last_sign_in_at: "2016-11-28 19:13:31", current_sign_in_ip: "61.33.149.101", last_sign_in_ip: "61.33.149.101", provider: "facebook", uid: "1104892262961168"}
+# ])
 Book.create!([
   {name: "북타임스 고려왕비열전 49. 충목왕, 정순 숙의 공주(총목왕의 모후) ", author: "김영곤", genre: "소설", isbn: nil, content: "/prince.pdf", cover: "http://comicthumb.phinf.naver.net//20161116_243/pocket_14792547172005UHkH_JPEG/kyobo8380279385308054617l480D161114100.jpg?type=m260", bookNum: 2527000, read_count: 181},
   {name: "북타임스 고려왕비열전 50. 충목왕, 충정왕, 정순 숙의 공주 ", author: "김영곤", genre: "소설", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161116_130/pocket_1479254708782E2ePx_JPEG/kyobo5154381791811650917l480D161114110.jpg?type=m260", bookNum: 2526999, read_count: 7},
@@ -4215,21 +4215,4 @@ Book.create!([
   {name: "2017년 대비 7급 한국사(단원별 기출문제집) ", author: "반달문 편", genre: "학습", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161110_216/pocket_1478728846232e1G4r_JPEG/k_epub9028338420063858885552711.jpg?type=m260", bookNum: 2519220, read_count: 0},
   {name: "2017년 대비 7급 한국사(핵심정리) ", author: "반달문 편", genre: "학습", isbn: nil, content: nil, cover: "http://comicthumb.phinf.naver.net//20161110_291/pocket_1478728844796LrWyC_JPEG/k_epub5715638970029612731552713.jpg?type=m260", bookNum: 2519219, read_count: 0}
 ])
-Mybook.create!([
-  {user_id: 1, book_id: 22, is_opened: true, is_listed: true},
-  {user_id: 1, book_id: 29, is_opened: false, is_listed: true},
-  {user_id: 1, book_id: 98, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 2, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 1, is_opened: true, is_listed: true},
-  {user_id: 1, book_id: 659, is_opened: true, is_listed: false},
-  {user_id: 2, book_id: 22, is_opened: true, is_listed: false},
-  {user_id: 2, book_id: 1, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 20, is_opened: false, is_listed: true},
-  {user_id: 2, book_id: 110, is_opened: true, is_listed: false},
-  {user_id: 2, book_id: 63, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 90, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 3387, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 3388, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 3392, is_opened: true, is_listed: false},
-  {user_id: 1, book_id: 3390, is_opened: true, is_listed: true}
-])
+

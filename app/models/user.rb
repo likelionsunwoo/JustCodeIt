@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
          
          
-         has_many :my_books
+        #  has_many :my_books
+        has_many :mybooks
          
          
          
