@@ -58,28 +58,33 @@ function popView() {
         <div class="col-md-12">
           <div class="aa-support-area">
             <!-- single support -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="aa-support-single">
-                <span class="fa fa-eye"></span>
-                <h4>이 책을 담은 고객이 관심을 보인 책</h4>
+                 <span class="fa fa-eye"></span>
+              
+              <center>   <h4>이 책을 담은 고객이 관심을 보인 책</h4> </center>
+              <br><br>
                 <% @result.sample(3).each do |book| %>
                   <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
                     <!--<div class="aa-support-single">-->
                   <li>
                     <figure>
                       <a class="aa-product-img" href="/mybook/detail/<%= book.id %>"><img src="<%= book.cover %>" width="172px" height="260px"></a>
-                      
+                      <br>
                         <figcaption>
-                        <h4 class="aa-product-title"><a href="/mybook/detail/<%= book.id %>"  style="color:white"><%= book.name %></a></h4>
-                      
+                        <h5 class="aa-product-title"><a href="/mybook/detail/<%= book.id %>"  style="color:white"><%= book.name %></a></h5>
+                      <br><br>
                       </figcaption>
                     </figure>
                   </li>
+                  </center>
                     <!--</div>-->
                   <!--</div>-->
                 <% end %>
               </div>
             </div>
+            
+            
             <!-- single support -->
             <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
             <!--  <div class="aa-support-single">-->
